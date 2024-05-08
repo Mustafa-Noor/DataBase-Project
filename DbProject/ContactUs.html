@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(48, 198, 185);
+    margin: 0;
+    padding: 20px;
+  }
+  .contact-container {
+    max-width: 800px; /* Adjusted max-width */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 50px; /* Adjusted padding to expand container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 20px; /* Adjusted border-radius for the container */
+    animation: slideInUp 1s ease;
+  }
+  .contact-image-container {
+    overflow: hidden; /* Ensure the image curve does not overflow the container */
+    position: relative;
+    border-top-left-radius: 40px; /* Adjusted to create a larger curve */
+    border-bottom-left-radius: 40px; /* Adjusted to create a larger curve */
+    border-top-right-radius: 40px; /* Adjusted to create a larger curve */
+    border-bottom-right-radius: 40px; /* Adjusted to create a larger curve */
+  }
+  .contact-image {
+    width: 100%; /* Adjusted width to fit container */
+    height: 200px; /* Set a specific height for the image */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    display: block;
+  }
+  .contact-header {
+    color: white;
+    padding: 20px; /* Increased padding for better visibility */
+    background: rgb(48, 198, 185); /* Turquoise color */
+    text-align: center;
+    margin: 20px 0; /* Added margin top and bottom */
+    border-top-left-radius: 20px; /* Adjusted to create a larger curve */
+    border-bottom-left-radius: 20px; /* Adjusted to create a larger curve */
+    border-top-right-radius: 20px; /* Match the container's border-radius */
+    border-bottom-right-radius: 20px; /* Match the container's border-radius */
+    animation: slideInUp 1s ease;
+  }
+  .contact-form {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: calc(100% - 22px); /* Adjusted for padding and border */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+  .contact-form button {
+    width: 100%;
+    background-color: rgb(48, 198, 185); /* Turquoise color */
+    color: white;
+    padding: 10px 0; /* Adjusted padding to center text vertically */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .contact-info {
+    background-color: rgb(48, 198, 185); /* Turquoise color */
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  .contact-info div {
+    margin-bottom: 10px;
+  }
+  nav {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 590px auto;
+    height: 50px;
+    background: #333;
+    border-radius: 8px;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
+  }
+  
+  nav a {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  nav a:hover {
+    color: black;
+  }
+  
+  nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    background: rgb(48, 198, 185);
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+  }
+  
+  nav a:nth-child(1) {
+    width: 100px;
+  }
+  
+  nav .start-home,
+  a:nth-child(1):hover ~ .animation {
+    width: 100px;
+    left: 0px;
+  }
+  
+  nav a:nth-child(2) {
+    width: 110px;
+  }
+  
+  nav a:nth-child(2):hover ~ .animation {
+    width: 110px;
+    left: 100px;
+  }
+  
+  nav a:nth-child(3) {
+    width: 100px;
+  }
+  
+  nav a:nth-child(3):hover ~ .animation {
+    width: 100px;
+    left: 210px;
+  }
+  
+  nav a:nth-child(4) {
+    width: 160px;
+  }
+  
+  nav a:nth-child(4):hover ~ .animation {
+    width: 160px;
+    left: 310px;
+  }
+  
+  nav a:nth-child(5) {
+    width: 160px;
+  }
+  
+  nav a:nth-child(5):hover ~ .animation {
+    width: 160px;
+    left: 470px;
+  }
+  
+  nav a:nth-child(6) {
+    width: 160px;
+  }
+  
+  nav a:nth-child(6):hover ~ .animation {
+    width: 160px;
+    left: 630px;
+  }
+  
+  nav a:nth-child(7) {
+    width: 160px;
+  }
+  
+  nav a:nth-child(7):hover ~ .animation {
+    width: 160px;
+    left: 790px;
+  }
+  
+  footer {
+
+background-color: #f8f8f8;
+color: #333;
+padding: 30px 0;
+margin-top: 50px;
+}
+
+.footerContainer {
+
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.footerLogo img {
+max-width: 150px;
+}
+
+.footerLinksContainer {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.footerLinks {
+flex: 1;
+margin-right: 20px;
+}
+
+.footerLinks h4 {
+color: #666;
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+.footerLinks ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.footerLinks ul li {
+margin-bottom: 8px;
+}
+
+.footerLinks ul li a {
+color: #333;
+text-decoration: none;
+}
+
+.footerBottom {
+text-align: center;
+margin-top: 20px;
+}
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    display: none;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="homePage.html">Home</a>
+    <a href="AboutUs.html">About</a>
+    <a href="Blog.html">Blog</a>
+    <a href="ContactUs.html">Contact Us</a>
+    <div class="animation start-home"></div>
+  </nav>
+
+  <div class="contact-container">
+    <div class="contact-image-container">
+      <img src="Images/contactImage.jpg" alt="Contact Image" class="contact-image">
+    </div>
+    <h1 class="contact-header">Hospital Contact Us</h1>
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your Name" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter a valid email address" required>
+      
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Message"></textarea required>
+      
+      <div>
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I accept the Terms of Service</label>
+      </div>
+      
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="contact-info">
+      <div>📞 CALL US</div>
+      <div> (+92)311-0898421 Dr.Rana Saad Qaiser</div>
+      
+      <div>📍 Department of CS,UET Lahore</div>
+      <div>Khandarr under the Lecture Theatres, Laeeq Niazi x Dr.Rana Point, N2</div>
+      
+      <div>⏰ HOURS</div>
+      <div>Mon – Fri: 11 am – 8 pm, Sat, Sun: 6 am – 8 pm</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footerContainer">
+        <div class="footerLogo">
+            <img src="Images/Alhaaj logo.png" alt="Microsoft Logo">
+        </div>
+        <div class="footerLinksContainer">
+            <div class="footerLinks">
+                <h4>Faculty</h4>
+                <ul>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">Nurse</a></li>
+                    <li><a href="#">Surgeon</a></li>
+                    <li><a href="#">Lab operators</a></li>
+                    <li><a href="#">servants</a></li>
+                </ul>
+            </div>
+            <div class="footerLinks">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Medical Care</a></li>
+                    <li><a href="#">Emergency Care</a></li>
+                    <li><a href="#">Laboratory Services</a></li>
+                    <li><a href="#">Pharmacy services</a></li>
+                    <li><a href="#">Surgical Services</a></li>
+                </ul>
+            </div>
+            <div class="footerLinks">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact HealthHub</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privacy </a></li>
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Trademarks</a></li>
+                </ul>
+            </div>
+            <div class="footerLinks">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">About HealthHub</a></li>
+                    <li><a href="#">Company news</a></li>
+                    <li><a href="#">Facilities at HealthHub</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Diversity and inclusion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <p>&copy; 2024 Alhaaj Hospital . All rights reserved.</p>
+    </div>
+</footer></body>
+</html>
